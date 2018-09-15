@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Group Project</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -48,152 +48,52 @@
 
     </div>
 
-    <!-- Map Puzzle Code -->
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-        * element that contains the map. */
-        #map {
-            height: 100%;
-        }
-        
-        /* Optional: Makes the sample page fill the window. */
-        html,
-        body {
-            height: 100%;
-                        margin: 0;
-                        padding: 0;
-                    }
-                    
-                    #floating-panel {
-                        position: absolute;
-                        top: 10px;
-                        left: 25%;
-                        z-index: 5;
-                        background-color: #fff;
-                        padding: 5px;
-                        border: 1px solid #999;
-                        text-align: center;
-                        font-family: 'Roboto', 'sans-serif';
-                        line-height: 30px;
-                        padding-left: 10px;
-                    }
-                    
-                    #warnings-panel {
-                        width: 100%;
-                        height: 10%;
-                        text-align: center;
-                    }
-                    </style>
+    <!--Map Puzzle-->
+    <div id="mapRiddle">
+        <div id="riddleText">
+            <h5>Answer this riddle to escape Liam Neeson</h5>
+            <h6>Location: <span id="startLocation"></span></h6>
+            <h6>Destination: <span id="endLocation"></span></h6>
+            <div class="row noPadding">
+                <form class="col s12">
+                    <div class="row noPadding">
+                        <div class="input-field col s12">
+                            <textarea id="mapAnswerInput" class="materialize-textarea"></textarea>
+                            <label for="mapAnswerInput"></label>
+                            <button id="mapAnswerSubmit" class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
 
-    <div>
-        <!-- <div id="floating-panel">
-                    <b>Start: </b>
-                    <select id="start">
-                        <option value="penn station, new york, ny">Penn Station</option>
-                        <option value="grand central station, new york, ny">Grand Central Station</option>
-                        <option value="625 8th Avenue, New York, NY, 10018">Port Authority Bus Terminal</option>
-                        <option value="staten island ferry terminal, new york, ny">Staten Island Ferry Terminal</option>
-                        <option value="101 E 125th Street, New York, NY">Harlem - 125th St Station</option>
-                    </select>
-                    <b>End: </b>
-                    <select id="end">
-                        <option value="260 Broadway New York NY 10007">City Hall</option>
-                        <option value="W 49th St & 5th Ave, New York, NY 10020">Rockefeller Center</option>
-                        <option value="moma, New York, NY">MOMA</option>
-                        <option value="350 5th Ave, New York, NY, 10118">Empire State Building</option>
-                        <option value="253 West 125th Street, New York, NY">Apollo Theater</option>
-                        <option value="1 Wall St, New York, NY">Wall St</option>
-                    </select>
-                </div> -->
-        <div id="map"></div>
-        &nbsp;
-        <div id="warnings-panel"></div>
-        <script>
-            function initMap() {
-                var markerArray = [];
+        </div>
+        <div class="testDiv">
+            <div id="floating-panel">
+                <b>Start: </b>
+                <select id="start">
+                    <option value="London, UK">London</option>
+                    <option value="Stonehenge, Amesbury, Salisbury, UK">Stonehenge</option>
+                    <option value="eagle and the child pub oxford">Oxford</option>
+                    <option value="White Cliffs of Dover, United Kingdom">Dover</option>
+                    <option value="Royal Crescent, Bath, Royal Crescent, Bath, UK">Bath</option>
+                </select>
+                <b>End: </b>
+                <select id="end">
+                    <option value="London, UK">London</option>
+                    <option value="Stonehenge, Amesbury, Salisbury, UK">Stonehenge</option>
+                    <option value="eagle and the child pub oxford">Oxford</option>
+                    <option value="White Cliffs of Dover, United Kingdom">Dover</option>
+                    <option value="Royal Crescent, Bath, Royal Crescent, Bath, UK">Bath</option>
+                </select>
+            </div>
+            <br>
+            <div id="map"></div>
+            &nbsp;
+            <div id="warnings-panel"></div>
+        </div>
 
-                // Instantiate a directions service.
-                var directionsService = new google.maps.DirectionsService;
-
-                // Create a map and center it on Manhattan.
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 13,
-                    center: { lat: 51.5074, lng: 0.1278 }
-                });
-
-                // Create a renderer for directions and bind it to the map.
-                var directionsDisplay = new google.maps.DirectionsRenderer({ map: map });
-
-                // Instantiate an info window to hold step text.
-                var stepDisplay = new google.maps.InfoWindow;
-
-                // Display the route between the initial start and end selections.
-                calculateAndDisplayRoute(
-                    directionsDisplay, directionsService, markerArray, stepDisplay, map);
-                // Listen to change events from the start and end lists.
-                var onChangeHandler = function () {
-                    calculateAndDisplayRoute(
-                        directionsDisplay, directionsService, markerArray, stepDisplay, map);
-                };
-                document.getElementById('start').addEventListener('change', onChangeHandler);
-                document.getElementById('end').addEventListener('change', onChangeHandler);
-            }
-
-            function calculateAndDisplayRoute(directionsDisplay, directionsService,
-                markerArray, stepDisplay, map) {
-                // First, remove any existing markers from the map.
-                for (var i = 0; i < markerArray.length; i++) {
-                    markerArray[i].setMap(null);
-                }
-
-                // Retrieve the start and end locations and create a DirectionsRequest using
-                // WALKING directions.
-                directionsService.route({
-                    origin: document.getElementById('start').value,
-                    destination: document.getElementById('end').value,
-                    travelMode: 'WALKING'
-                }, function (response, status) {
-                    // Route the directions and pass the response to a function to create
-                    // markers for each step.
-                    if (status === 'OK') {
-                        document.getElementById('warnings-panel').innerHTML =
-                            '<b>' + response.routes[0].warnings + '</b>';
-                        directionsDisplay.setDirections(response);
-                        showSteps(response, markerArray, stepDisplay, map);
-                    } else {
-                        window.alert('Directions request failed due to ' + status);
-                    }
-                });
-            }
-
-            function showSteps(directionResult, markerArray, stepDisplay, map) {
-                // For each step, place a marker, and add the text to the marker's infowindow.
-                // Also attach the marker to an array so we can keep track of it and remove it
-                // when calculating new routes.
-                var myRoute = directionResult.routes[0].legs[0];
-                for (var i = 0; i < myRoute.steps.length; i++) {
-                    var marker = markerArray[i] = markerArray[i] || new google.maps.Marker;
-                    marker.setMap(map);
-                    marker.setPosition(myRoute.steps[i].start_location);
-                    attachInstructionText(
-                        stepDisplay, marker, myRoute.steps[i].instructions, map);
-                }
-            }
-
-            function attachInstructionText(stepDisplay, marker, text, map) {
-                google.maps.event.addListener(marker, 'click', function () {
-                    // Open an info window when the marker is clicked on, containing the text
-                    // of the step.
-                    stepDisplay.setContent(text);
-                    stepDisplay.open(map, marker);
-                });
-            }
-        </script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN-Maosba3R24Xqxv3aT-ZHcZ16dbzbdA&callback=initMap">
-
-        </script>
     </div>
-
 
     <!-- Currency Converter Code -->
     <h1>Currency Converter</h1>
@@ -213,7 +113,7 @@
 
             <!-- Button triggers new show to be added -->
             <input data-target="modal1" class="btn modal-trigger" id="math-puzzle-guess" type="submit" value="Guess">
-            <!-- <button data-target="modal1" class="btn modal-trigger">Guess</button> -->
+            <button data-target="modal1" class="btn modal-trigger">Guess</button>
         </form>
     </div>
 
@@ -239,8 +139,7 @@
                 <h1 class="display-4">Decoder Puzzle</h1>
                 <h2 class="display-4">Instructions go here</h2>
                 <br>
-                <img src="https://images-na.ssl-images-amazon.com/images/I/51BqP%2B3XFHL.01_SL500_.jpg" alt="cryptex"
-                    class="img-responsive">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/51BqP%2B3XFHL.01_SL500_.jpg" alt="cryptex" class="img-responsive">
             </div>
             <div class="col s6">
                 <div id="game">
@@ -287,12 +186,13 @@
 
     <!-- Link to jQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN-Maosba3R24Xqxv3aT-ZHcZ16dbzbdA&callback=initMap">
+    </script>
+    <script src="./assets/JavaScript/MapPuzzle.js"></script>
     <!--Links to external javascript files-->
     <script src="./assets/JavaScript/currencyConverter.js"></script>
     <script src="./assets/JavaScript/decodePuzzle.js"></script>
     <script src="./assets/JavaScript/leaderBoard.js"></script>
-    <script src="./assets/JavaScript/MapPuzzle.js"></script>
     <script src="./assets/JavaScript/WelcomePage.js"></script>
 
 
