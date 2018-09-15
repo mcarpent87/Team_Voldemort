@@ -101,9 +101,9 @@
     <img class="math-puzzle-image" src="https://banner2.kisspng.com/20180422/hkq/kisspng-fruit-math-mathematics-mathematical-puzzle-differe-mathematical-figures-5add488b2e1e20.7199317015244514671889.jpg"
         alt="fruit math puzzle">
 
-    <div id="search-parameters">
-        <h6 class="search-title">Convert Answer to <span id="country-to-convert"> GBP</span></h6>
-        <form id="show-form">
+    <div id="convert-parameters">
+        <h6 class="convert-title">Convert Answer to <span id="country-to-convert"></span></h6>
+        <form id="convert-form">
             <div class="form-group">
                 <label for="number-input">Answer</label>
                 <input type="text" id="number-input" class="form-control">
@@ -116,17 +116,33 @@
             <button data-target="modal1" class="btn modal-trigger">Guess</button>
         </form>
     </div>
+ 
+    <div id="currency-converted-container"></div>
 
-    <div id="currency-converter-"></div>
+    <div id="search-parameters">
+        <h6 class="convert-title">Check if it's right</h6>
+        <form id="check-form">
+            <div class="form-group">
+                <label for="converted-number-input">Converted Answer</label>
+                <input type="text" id="converted-number-input" class="form-control">
+            </div>
+
+            <br>
+
+            <!-- Button triggers new show to be added -->
+            <input data-target="modal1" class="btn modal-trigger" id="converted-math-puzzle-guess" type="submit" value="Submit">
+            <!-- <button data-target="modal1" class="btn modal-trigger">Guess</button> -->
+        </form>
+    </div>
 
     <!-- Modal Structure -->
-    <div id="currency-modal" class="modal">
+    <div id="modal1" class="modal">
         <div class="modal-content">
             <h4>Currency Modal</h4>
             <p id="currency-modal-correct">Correct! Go to the next puzzle.</p>
             <p id="currency-modal-wrong">Nope! Try again.</p>
         </div>
-        <div class="modal-footer">
+            <div class="modal-footer">
             <a id="currency-modal-next" href="#!" class="modal-close waves-effect waves-green btn-flat">Next</a>
             <a id="currency-modal-try-again" href="#!" class="modal-close waves-effect waves-green btn-flat">Try again</a>
         </div>
@@ -186,6 +202,10 @@
 
     <!-- Link to jQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- link to Materialize JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN-Maosba3R24Xqxv3aT-ZHcZ16dbzbdA&callback=initMap">
     </script>
     <script src="./assets/JavaScript/MapPuzzle.js"></script>
