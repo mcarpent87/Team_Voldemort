@@ -4,14 +4,47 @@ var gameValues = {
         {
             country: "England",
             currency: "GBP",
-            answer: 9.18,
             symbol: "£"
         }
     ]
 }
 
+//object with different puzzles in it
+var puzzleImage = {
+    puzzles: [
+        {
+            img: "./assets/images/cups.png",
+            answer: 100
+        }, {
+            img: "./assets/images/flowers.jpg",
+            answer: 81
+        }, {
+            img: "./assets/images/fruit.jpg",
+            answer: 12
+        }, {
+            img: "./assets/images/horses.png",
+            answer: 42
+        }
+    ]
+}
+
+//pick a random number to determine which puzzle will show
+var randomNumber = Math.floor((Math.random() * 4))
+
+console.log(randomNumber)
+
+//put image on page
+var image = $("<img>").attr("src", puzzleImage.puzzles[randomNumber].img);
+
+image.addClass("currency-puzzle-image")
+
+$("#math-puzzle-image").append(image)
+
 //update page with currency for country
 $("#country-to-convert").text(gameValues.countries[0].currency)
+
+//global converted answer
+var convertedAnswer = 0
 
 //currency conversion click event
 $("#math-puzzle-guess").on("click", function(){
@@ -44,11 +77,14 @@ $("#math-puzzle-guess").on("click", function(){
         var conversionRate = awesomeData
         console.log(conversionRate)
 
-        //math to convert the users guess
+        //math to convert the users guess and puzzle answer
         var convertGuess = guess * conversionRate
 
-        //limit converted guess to two decimal points
+        var convertAnswer = puzzleImage.puzzles[randomNumber].answer * conversionRate
+
+        //limit converted guess and answer to two decimal points
         convertedGuess = convertGuess.toFixed(2)
+        convertedAnswer = convertAnswer.toFixed(2)
         console.log(convertedGuess)
 
         //update page with vconverted guess
@@ -61,7 +97,7 @@ $("#converted-math-puzzle-guess").on("click", function(){
     event.preventDefault();
 
     //variables to compare
-    var answer = gameValues.countries[0].answer
+    var answer = parseFloat(convertedAnswer)
     var convertedGuess = parseFloat($("#converted-number-input").val().trim())
 
     console.log(answer)

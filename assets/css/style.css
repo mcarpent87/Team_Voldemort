@@ -45,3 +45,12 @@
 .noPadding {
   padding: 0px;
 }
+
+/* currency puzzle styles */
+.currency-puzzle-image {
+  width: 700px;
+  height: auto;
+  margin: auto;
+}
+
+/* end currency puzzle styles */
