@@ -10,11 +10,12 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
 </head>
 
 <body>
     <!-- Welcome Page Code -->
-    <div class="container">
+    <div class="containerFrontPage">
         <h1 style="text-align: center">Title of our Group Project</h1>
 
         <br>
@@ -32,7 +33,9 @@
             <li class="collection-item">3. Direction stuff</li>
             <li class="collection-item">4. Direction stuff</li>
         </ul>
-
+        <button id="timer">start</button>
+        
+        <button id="done">stop</button>
         <br>
 
         <div class="row">
@@ -49,7 +52,9 @@
     </div>
 
     <!--Map Puzzle-->
-    <div id="mapRiddle">
+<div id="hideMapRiddle">
+    <div id="mapRiddle"></div>
+            <div id ="count"></div>
         <div id="riddleText">
             <h5>Answer this riddle to escape Liam Neeson</h5>
             <h6>Location: <span id="startLocation"></span></h6>
@@ -95,12 +100,18 @@
         </div>
 
     </div>
-
+</div>
+<div id="currency-puzzle-container">
     <!-- Currency Converter Code -->
     <div id="currency-puzzle-container">
     <h1>Currency Converter</h1>
+
+    <div id ="count2"></div>
+    
+
     
     <div id="math-puzzle-image"></div>
+
 
     <div id="convert-parameters">
         <h6 class="convert-title">Convert Answer to <span id="country-to-convert"></span></h6>
@@ -148,8 +159,12 @@
     </div>
 </div>
 
+=======
+
+
     <!-- Decode Puzzle Code -->
     <div class="container">
+            <div id ="count3"></div>
         <div class="row">
             <div class="col s6">
                 <h1 class="display-4">Decoder Puzzle</h1>
@@ -165,39 +180,20 @@
         </div>
     </div>
     <!-- Leader Board Code -->
+    <div class="containerScoreBoard">
     <h1 style="text-align: center">Scores</h1>
     <br>
     <table class="striped">
         <thead>
             <tr>
-                <th><span class="blue-text text-darken-2">Name</span></th>
-                <th><span class="blue-text text-darken-2">Score</span></th>
+                <th>Name</th>
+                <th>Score</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>Alvin</td>
-                <td>5:00</td>
-            </tr>
-            <tr>
-                <td>Alan</td>
-                <td>5:02</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>5:03</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>5:03</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>5:03</td>
-            </tr>
+        <tbody id="output">
         </tbody>
     </table>
-
+    </div>
     <!-- Timer Code -->
 
     <!-- Link to jQuery -->
