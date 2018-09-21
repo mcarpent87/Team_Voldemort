@@ -34,7 +34,7 @@
             <li class="collection-item">4. Direction stuff</li>
         </ul>
         <button id="timer">start</button>
-        
+
         <button id="done">stop</button>
         <br>
 
@@ -52,9 +52,11 @@
     </div>
 
     <!--Map Puzzle-->
+
 <div id="hideMapRiddle">
     <!-- <div id="mapRiddle"></div> -->
             <div id ="count"></div>
+
         <div id="riddleText">
             <h5>Answer this riddle to escape Liam Neeson</h5>
             <h6>Location: <span id="startLocation"></span></h6>
@@ -85,7 +87,7 @@
                 </select>
 
                 <br>
-                
+
                 <b>End: </b>
                 <select id="end">
                     <option value="London, UK">London</option>
@@ -100,12 +102,14 @@
         </div>
 
     </div>
+
 <!-- </div> -->
 
     <!-- Currency Converter Code -->
     <div id="currency-puzzle-container">
 
         <h1>Currency Converter Puzzle</h1>
+
 
         <div class="row">
             <p class="col s8">If you're going to buy something in <span id="country-to-convert"></span> you'll need to know the conversion to dollars at some point. Practice curruency conversions and move to the next puzzle by solving this puzzle and using the converter on the right.</p>
@@ -153,20 +157,28 @@
             </div>
     </div>
 
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h4>Currency Modal</h4>
-            <p id="currency-modal-correct">Correct! Go to the next puzzle.</p>
-            <p id="currency-modal-wrong">Nope! Try again.</p>
-        </div>
-            <div class="modal-footer">
-            <a id="currency-modal-next" href="#!" class="modal-close waves-effect waves-green btn-flat">Next</a>
-            <a id="currency-modal-try-again" href="#!" class="modal-close waves-effect waves-green btn-flat">Try again</a>
-        </div>
-    </div>
-</div>
 
+                    <br>
+
+                    <!-- Button triggers new show to be added -->
+                    <input data-target="modal1" class="btn modal-trigger" id="converted-math-puzzle-guess" type="submit" value="Submit">
+                </form>
+            </div>
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Currency Modal</h4>
+                    <p id="currency-modal-correct">Correct! Go to the next puzzle.</p>
+                    <p id="currency-modal-wrong">Nope! Try again.</p>
+                </div>
+                <div class="modal-footer">
+                    <a id="currency-modal-next" href="#!" class="modal-close waves-effect waves-green btn-flat">Next</a>
+                    <a id="currency-modal-try-again" href="#!" class="modal-close waves-effect waves-green btn-flat">Try
+                        again</a>
+                </div>
+            </div>
+        </div>
 
 
     <!-- Decode Puzzle Code -->
@@ -222,6 +234,7 @@
     <script src="./assets/JavaScript/decodePuzzle.js"></script>
     <script src="./assets/JavaScript/leaderBoard.js"></script>
     <script src="./assets/JavaScript/WelcomePage.js"></script>
+
 
 
 
