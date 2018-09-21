@@ -35,10 +35,13 @@ function decrypt(encrypted) {
 }
 
 //Words array
-var words = ["Westminister Abbey", "Kensington Gardens", "Tower Bridge", "Parliament", "Buckingham Palace", "Trafalgar Square"]
+var words = ["Westminster Abbey", "Kensington Gardens", "Tower Bridge", "Parliament", "Buckingham Palace", "Trafalgar Square"]
+//Randomly select a word from the words array 
 var word = words[Math.floor(Math.random()*words.length)];
 console.log(word);
+//Letters array 
 var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+//Empty array to store the scrambled letters
 var lettersscrambled = "";
 
 //For loop that loops through the letters array, scrambles the letters, 
@@ -58,16 +61,42 @@ var encryptalpha = encrypt(lettersscrambled);
 console.log(encryptalpha);
 var decryptalpha = decrypt(encryptalpha); 
 
-//Append to HTML
-$( ".inner" ).append( "<p>" + encrypted + "</p>" );
-$( ".outer" ).append( "<p>" + encryptalpha + "</p>");
-$( ".outer" ).append( "<p>" + decryptalpha + "</p>");
 
-function validateForm() {
-  var x = document.forms["myForm"]["fname"].value;
-  if (x == answer) {
-      alert("Good Work!");
-      return false;
-  }
-}
+var paragraph = $("<p>")
+//Add class to p tags 
+paragraph.addClass( ".decodeAlphabet" );
+
+var p_encrypted = paragraph.text(encrypted)
+
+var p_encryptalpha = paragraph.text(encryptalpha)
+
+var p_decryptalpha = paragraph.text(decryptalpha)
+
+//Append to HTML
+$( ".inner" ).text(p_encrypted);
+$( ".outer" ).text(p_encryptalpha);
+$( ".outer" ).text(p_decryptalpha);
+
+
+
+//Check the users input to the answer. If user is correct, hide this div and show the next div. 
+$("#check").on("click", function() {
+  event.preventDefault();
+
+  var answer = $("#answer").val().trim();
+  console.log(answer);
+
+  answer = answer.toLowerCase();
+  word = word.toLowerCase();
+
+  console.log(answer);
+  console.log(word);
+
+  if (word === answer) {
+    $("#containerScoreBoard").show().attr("class", "showScoreboard");
+    // $("#containerScoreBoard").show();
+    $("#decode-puzzle-container").hide();
+  } else {alert("try again")}
+  
+})
 
