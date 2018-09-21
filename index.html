@@ -52,9 +52,11 @@
     </div>
 
     <!--Map Puzzle-->
-    <div id="hideMapRiddle">
-        <div id="mapRiddle"></div>
-        <div id="count"></div>
+
+<div id="hideMapRiddle">
+    <!-- <div id="mapRiddle"></div> -->
+            <div id ="count"></div>
+
         <div id="riddleText">
             <h5>Answer this riddle to escape Liam Neeson</h5>
             <h6>Location: <span id="startLocation"></span></h6>
@@ -100,43 +102,61 @@
         </div>
 
     </div>
-    </div>
+
+<!-- </div> -->
+
+    <!-- Currency Converter Code -->
     <div id="currency-puzzle-container">
-        <!-- Currency Converter Code -->
-        <div id="currency-puzzle-container">
-            <h1>Currency Converter</h1>
 
-            <div id="count2"></div>
+        <h1>Currency Converter Puzzle</h1>
 
 
+        <div class="row">
+            <p class="col s8">If you're going to buy something in <span id="country-to-convert"></span> you'll need to know the conversion to dollars at some point. Practice curruency conversions and move to the next puzzle by solving this puzzle and using the converter on the right.</p>
 
-            <div id="math-puzzle-image"></div>
-
-
-            <div id="convert-parameters">
-                <h6 class="convert-title">Convert Answer to <span id="country-to-convert"></span></h6>
-                <form id="convert-form">
-                    <div class="form-group">
-                        <label for="number-input">Answer</label>
-                        <input type="text" id="number-input" class="form-control">
-                    </div>
-
-                    <br>
-
-                    <!-- Button triggers new show to be added -->
-                    <input data-target="modal1" class="btn modal-trigger" id="math-puzzle-guess" type="submit" value="Guess">
-                </form>
+            <div class="col s4" id ="count2"></div>
+        </div>
+    
+        <div class="row">
+            <div class="col s8">
+                <div id="math-puzzle-image"></div>
             </div>
 
-            <div id="currency-converted-container"></div>
+            <div class="col s4">
+                <div id="convert-parameters">
+                    <h6 class="convert-title">Convert Answer to <span id="currency-to-convert"></span></h6>
+                    <form id="convert-form">
+                        <div class="form-group">
+                            <label for="number-input">Answer</label>
+                            <input type="text" id="number-input" class="form-control">
+                        </div>
 
-            <div id="search-parameters">
-                <h6 class="convert-title">Check if it's right</h6>
-                <form id="check-form">
-                    <div class="form-group">
-                        <label for="converted-number-input">Converted Answer</label>
-                        <input type="text" id="converted-number-input" class="form-control">
-                    </div>
+                        <br>
+
+                        <!-- Button triggers new show to be added -->
+                        <input data-target="modal1" class="btn modal-trigger" id="math-puzzle-guess" type="submit" value="Guess">
+                    </form>
+                </div>
+            
+                <div id="currency-converted-container"></div>
+
+                <div id="search-parameters">
+                    <h6 class="convert-title">Check if it's right</h6>
+                    <form id="check-form">
+                        <div class="form-group">
+                            <label for="converted-number-input">Converted Answer</label>
+                            <input type="text" id="converted-number-input" class="form-control">
+                        </div>
+
+                        <br>
+
+                        <!-- Button triggers new show to be added -->
+                        <input data-target="modal1" class="btn modal-trigger" id="converted-math-puzzle-guess" type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+    </div>
+
 
                     <br>
 
@@ -160,57 +180,61 @@
             </div>
         </div>
 
-        =======
 
-
-        <!-- Decode Puzzle Code -->
-        <div class="container">
-            <div id="count3"></div>
+    <!-- Decode Puzzle Code -->
+    <div id="decode-puzzle-container" class="container">
+            <div class="col s12">             
             <div class="row">
-                <div class="col s6">
-                    <h1 class="display-4">Decoder Puzzle</h1>
-                    <h2 class="display-4">Instructions go here</h2>
-                    <br>
-                    <img src="https://images-na.ssl-images-amazon.com/images/I/51BqP%2B3XFHL.01_SL500_.jpg" alt="cryptex" class="img-responsive">
-                </div>
-                <div class="col s6">
-                    <div id="game">
-                        <p>Press any key to begin the puzzle!</p>
-                    </div>
-                </div>
+              <h1>Decoder Puzzle</h1>
+                <h2>Instructions</h2>
+                <h6>You have been given a great location to visit, but the name of the place has been scrambled!
+                  To decode the your next destination, With your trusty decoder, find out where you are heading next!
+                </h6>
+            <div class="row"></div>
+              <h4>Secret Message:</h4>
+            <div class="inner"></div>
+              <h4>Decipher Message Here:</h4>
+            <div class="outer"></div>
+              <h5>Answer:</h5>       
+            <input id="answer" type="text" class="validate">
+              <label for="answer"></label>
+            <a class="waves-effect waves-light btn-small"id="check">Check Answer</a>
             </div>
-        </div>
-        <!-- Leader Board Code -->
-        <div class="containerScoreBoard">
-            <h1 style="text-align: center">Scores</h1>
-            <br>
-            <table class="striped">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Score</th>
-                    </tr>
-                </thead>
-                <tbody id="output">
-                </tbody>
-            </table>
-        </div>
-        <!-- Timer Code -->
+            </div>
+            </div>
+        
+    <!-- Leader Board Code -->
+    <div class="containerScoreBoard">
+    <h1 style="text-align: center">Scores</h1>
+    <br>
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody id="output">
+        </tbody>
+    </table>
+    </div>
+    <!-- Timer Code -->
 
-        <!-- Link to jQuery -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Link to jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        <!-- link to Materialize JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- link to Materialize JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN-Maosba3R24Xqxv3aT-ZHcZ16dbzbdA&callback=initMap">
+    </script>
+    <script src="./assets/JavaScript/MapPuzzle.js"></script>
+    <!--Links to external javascript files-->
+    <script src="./assets/JavaScript/currencyConverter.js"></script>
+    <script src="./assets/JavaScript/decodePuzzle.js"></script>
+    <script src="./assets/JavaScript/leaderBoard.js"></script>
+    <script src="./assets/JavaScript/WelcomePage.js"></script>
 
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN-Maosba3R24Xqxv3aT-ZHcZ16dbzbdA&callback=initMap">
-        </script>
-        <script src="./assets/JavaScript/MapPuzzle.js"></script>
-        <!--Links to external javascript files-->
-        <script src="./assets/JavaScript/currencyConverter.js"></script>
-        <script src="./assets/JavaScript/decodePuzzle.js"></script>
-        <script src="./assets/JavaScript/leaderBoard.js"></script>
-        <script src="./assets/JavaScript/WelcomePage.js"></script>
 
 
 

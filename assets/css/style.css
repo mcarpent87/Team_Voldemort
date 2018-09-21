@@ -81,3 +81,18 @@ select {
 }
 
 /* end currency puzzle styles */
+
+
+/* decoder puzzle styles */
+
+p{
+  display:inline-block;
+  letter-spacing: 25px; 
+  font-weight: bold; 
+  font-size: 24px; 
+  border: solid 1px black;
+  padding: 0px 10px 0px 10px; 
+ }
+
+ /* end decoder puzzles styles */
+
