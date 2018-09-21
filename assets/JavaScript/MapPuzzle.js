@@ -192,7 +192,11 @@ $("#mapAnswerSubmit").on("click", function() {
   var userInput = $("#mapAnswerInput").val().trim();
 
   if (userInput === targetNumberToGet.Correct) {
-    $("#mapRiddle").hide();
+    $("#hideMapRiddle").hide();
+    $(".testDiv").hide();
+    $("#riddleText").hide();
+    $("#count").hide();
+    $("#currency-puzzle-container").show();
   } else {
     alert("Try Again");
     $("#mapAnswerInput").val("");

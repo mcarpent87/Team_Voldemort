@@ -41,7 +41,8 @@ image.addClass("currency-puzzle-image")
 $("#math-puzzle-image").append(image)
 
 //update page with currency for country
-$("#country-to-convert").text(gameValues.countries[0].currency)
+$("#currency-to-convert").text(gameValues.countries[0].currency)
+$("#country-to-convert").text(gameValues.countries[0].country)
 
 //global converted answer
 var convertedAnswer = 0
@@ -113,6 +114,8 @@ $("#converted-math-puzzle-guess").on("click", function(){
     if (convertedGuess === answer) {
         $("#currency-modal-wrong").hide()
         $("#currency-modal-try-again").hide()
+        $("#currency-puzzle-container").hide()
+        $("#decode-puzzle-container").show()
     } else {
         $("#currency-modal-correct").hide()
         $("#currency-modal-next").hide()
@@ -122,6 +125,6 @@ $("#converted-math-puzzle-guess").on("click", function(){
     }
 
     //show modal
-    $('.modal').modal();
+    // $('.modal').modal();
       
 })

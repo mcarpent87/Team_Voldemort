@@ -53,7 +53,7 @@
 
     <!--Map Puzzle-->
 <div id="hideMapRiddle">
-    <div id="mapRiddle"></div>
+    <!-- <div id="mapRiddle"></div> -->
             <div id ="count"></div>
         <div id="riddleText">
             <h5>Answer this riddle to escape Liam Neeson</h5>
@@ -100,49 +100,57 @@
         </div>
 
     </div>
-</div>
-<div id="currency-puzzle-container">
+<!-- </div> -->
+
     <!-- Currency Converter Code -->
     <div id="currency-puzzle-container">
-    <h1>Currency Converter</h1>
 
-    <div id ="count2"></div>
+        <h1>Currency Converter Puzzle</h1>
+
+        <div class="row">
+            <p class="col s8">If you're going to buy something in <span id="country-to-convert"></span> you'll need to know the conversion to dollars at some point. Practice curruency conversions and move to the next puzzle by solving this puzzle and using the converter on the right.</p>
+
+            <div class="col s4" id ="count2"></div>
+        </div>
     
-
-    
-    <div id="math-puzzle-image"></div>
-
-
-    <div id="convert-parameters">
-        <h6 class="convert-title">Convert Answer to <span id="country-to-convert"></span></h6>
-        <form id="convert-form">
-            <div class="form-group">
-                <label for="number-input">Answer</label>
-                <input type="text" id="number-input" class="form-control">
+        <div class="row">
+            <div class="col s8">
+                <div id="math-puzzle-image"></div>
             </div>
 
-            <br>
+            <div class="col s4">
+                <div id="convert-parameters">
+                    <h6 class="convert-title">Convert Answer to <span id="currency-to-convert"></span></h6>
+                    <form id="convert-form">
+                        <div class="form-group">
+                            <label for="number-input">Answer</label>
+                            <input type="text" id="number-input" class="form-control">
+                        </div>
 
-            <!-- Button triggers new show to be added -->
-            <input data-target="modal1" class="btn modal-trigger" id="math-puzzle-guess" type="submit" value="Guess">
-        </form>
-    </div>
- 
-    <div id="currency-converted-container"></div>
+                        <br>
 
-    <div id="search-parameters">
-        <h6 class="convert-title">Check if it's right</h6>
-        <form id="check-form">
-            <div class="form-group">
-                <label for="converted-number-input">Converted Answer</label>
-                <input type="text" id="converted-number-input" class="form-control">
+                        <!-- Button triggers new show to be added -->
+                        <input data-target="modal1" class="btn modal-trigger" id="math-puzzle-guess" type="submit" value="Guess">
+                    </form>
+                </div>
+            
+                <div id="currency-converted-container"></div>
+
+                <div id="search-parameters">
+                    <h6 class="convert-title">Check if it's right</h6>
+                    <form id="check-form">
+                        <div class="form-group">
+                            <label for="converted-number-input">Converted Answer</label>
+                            <input type="text" id="converted-number-input" class="form-control">
+                        </div>
+
+                        <br>
+
+                        <!-- Button triggers new show to be added -->
+                        <input data-target="modal1" class="btn modal-trigger" id="converted-math-puzzle-guess" type="submit" value="Submit">
+                    </form>
+                </div>
             </div>
-
-            <br>
-
-            <!-- Button triggers new show to be added -->
-            <input data-target="modal1" class="btn modal-trigger" id="converted-math-puzzle-guess" type="submit" value="Submit">
-        </form>
     </div>
 
     <!-- Modal Structure -->
@@ -159,11 +167,10 @@
     </div>
 </div>
 
-=======
 
 
     <!-- Decode Puzzle Code -->
-    <div class="container">
+    <div id="decode-puzzle-container" class="container">
             <div id ="count3"></div>
         <div class="row">
             <div class="col s6">
