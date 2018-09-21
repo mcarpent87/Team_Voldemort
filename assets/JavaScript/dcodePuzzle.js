@@ -1,64 +1,73 @@
-//Decoder Puzzle
-//Array of letter choices
-var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; //Array containing all letters of the alphabet
-//Array of words
-var wordsArray = ["Underground", "Tower Bridge", "Buckingham Palace", "Parlament", "", "", "","", "", "", "", "", "", "", ""]; 
+//Build the cypher and its reverse
+let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split(''),
+  cypher = {},
+  reverseCypher = {};
 
-//Choose random word from the words array
-function chooseWord () {
-    var randomWord = wordArray[Math.floor(Math.random () * wordArray.length)];
-    console.log(randomWord);
-    spacesWord();
+alphabet.forEach(ea => cypher[ea] = '');
+
+for (let i in cypher) {
+  cypher[i] = alphabet.splice(Math.floor(Math.random() * alphabet.length), 1)[0];
 }
 
-//Split up random word into letters into an array
-// splits string of randomWord into an array consisting of each letter
-function spacesWord () {
-    splitUpWord = randomWord.split("");
-    console.log(splitUpWord);
-    for (var i = 0; i < splitUpWord.length; i++) {
-        splitUpWord[i] = "_ ";
-        displayWord += splitUpWord[i];
-    }
-    console.log(displayWord);
+for (let i in cypher) {
+  reverseCypher[cypher[i]] = i;
 }
 
-//Shuffle letters in the selected random word
-var letters_temp = shuffleArray((letters.slice(0)))
-//Loop through the length of the letters array
-    for (var i = 0; i < letters.length; i++) {
-        $("#count-letters").append($("<div>").addClass("count_letter_item")
-        .append(letters[i])
-        .append("<br>")
-        .append ($("<input>").attr("name", "letters["+letters[i]+"]")
-        .val(letters_temp[i])
-        .attr("size", 2)
-        ))
+//Build the encryption and decryption functions
+function encrypt(string) {
+  string = string.toLowerCase().split('');
+  string.forEach((ea, i) => {
+    if (cypher[ea]) {
+      string[i] = cypher[ea];
     }
-//Randomize array element order in-place using durstenfeld shuffle algorithm
-    function shuffleArray(array) {
-        for (var i = array.length -1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1))
-            var temp = array [i]
-            array[i] = array[j]
-            array[j] = temp
-        }
-        return array
+  });
+  return string.join('');
+}
+
+function decrypt(encrypted) {
+  encrypted = encrypted.toLowerCase().split('');
+  encrypted.forEach((ea, i) => {
+    if (reverseCypher[ea]) {
+      encrypted[i] = reverseCypher[ea];
     }
-    
-    $("[name=txt_input]").keyup(function(){
-      console.log("log contents");
-      var the_input = $("[name=txt_input]").val().split("")
-      var translated_text = ""
-      for (var i = 0; i < the_input.length; i++) {
-        if($("[name='letters["+the_input[i]+"]']").val() === undefined){
-          translated_text += the_input[i]
-        }else{
-          translated_text += $("[name='letters["+the_input[i]+"]']").val()
-        }
-        
-      }
-      $("[name=txt_output]").val(translated_text)
-      // if($("[name='letters[m]']").val())
-    })
-  
+  });
+  return encrypted.join('')
+}
+
+//Words array
+var words = ["Westminister Abbey", "Kensington Gardens", "Tower Bridge", "Parliament", "Buckingham Palace", "Trafalgar Square"]
+var word = words[Math.floor(Math.random()*words.length)];
+console.log(word);
+var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+var lettersscrambled = "";
+
+//For loop that loops through the letters array, scrambles the letters, 
+//and places them into the scrambledletters var
+for (var i=0; i < letters.length; i++) {
+  letters[Math.floor(Math.random()*letters.length)];
+  lettersscrambled += letters[i];
+}
+
+// Split randomly selected word into array of letters
+var wordSplit = word.split('');
+
+//Grab a random word from the words array and encrypt it. 
+var encrypted = encrypt(word);
+console.log(encrypted);
+var encryptalpha = encrypt(lettersscrambled);
+console.log(encryptalpha);
+var decryptalpha = decrypt(encryptalpha); 
+
+//Append to HTML
+$( ".inner" ).append( "<p>" + encrypted + "</p>" );
+$( ".outer" ).append( "<p>" + encryptalpha + "</p>");
+$( ".outer" ).append( "<p>" + decryptalpha + "</p>");
+
+function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  if (x == answer) {
+      alert("Good Work!");
+      return false;
+  }
+}
+
