@@ -15,39 +15,32 @@
 
 <body>
     <!-- Welcome Page Code -->
+
+    <div id ="count"></div>
+<div id="game-container" class="container">
     <div class="containerFrontPage">
-        <h1 style="text-align: center">Title of our Group Project</h1>
+        <h1 style="text-align: center">See the World!</h1>
 
         <br>
 
-        <h2>How to play this game</h2>
+        <p>
+            Get your passport ready and see the world. Start by entering a username and then solve the following puzzles to explore foreign places and cultures. Beat the timer to end up on the leaderboard, but if time runs out you'll end up stuck abroad.
+        </p>
 
         <br>
-
-        <ul style class="collection with-header">
-            <li style="background: grey" class="collection-header">
-                <h4>Directions</h4>
-            </li>
-            <li class="collection-item">1. Direction stuff</li>
-            <li class="collection-item">2. Direction stuff</li>
-            <li class="collection-item">3. Direction stuff</li>
-            <li class="collection-item">4. Direction stuff</li>
-        </ul>
-        <button id="timer">start</button>
-
-        <button id="done">stop</button>
-        <br>
-
+        <div class="usernameImput">
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field">
                 <input value="" id="first_name2" type="text" class="validate">
                 <label class="active" for="first_name2">Enter Name</label>
             </div>
         </div>
+        
 
         <button class="btn waves-effect waves-light" type="submit" name="action">Start
-            <i class="material-icons right">Game</i>
+            <!-- <i class="material-icons right">Game</i> -->
         </button>
+    </div>
 
     </div>
 
@@ -55,7 +48,7 @@
 
 <div id="hideMapRiddle">
     <!-- <div id="mapRiddle"></div> -->
-            <div id ="count"></div>
+            <!-- <div id ="count"></div> -->
 
         <div id="riddleText">
             <h5>Answer this riddle to escape Liam Neeson</h5>
@@ -114,7 +107,7 @@
         <div class="row">
             <p class="col s8">If you're going to buy something in <span id="country-to-convert"></span> you'll need to know the conversion to dollars at some point. Practice curruency conversions and move to the next puzzle by solving this puzzle and using the converter on the right.</p>
 
-            <div class="col s4" id ="count2"></div>
+            <!-- <div class="col s4" id ="count2"></div> -->
         </div>
     
         <div class="row">
@@ -161,7 +154,7 @@
                     <br>
 
                     <!-- Button triggers new show to be added -->
-                    <input data-target="modal1" class="btn modal-trigger" id="converted-math-puzzle-guess" type="submit" value="Submit">
+                    <!-- <input data-target="modal1" class="btn modal-trigger" id="converted-math-puzzle-guess" type="submit" value="Submit"> -->
                 </form>
             </div>
 
@@ -187,8 +180,9 @@
             <div class="row">
               <h1>Decoder Puzzle</h1>
                 <h2>Instructions</h2>
-                <h6>You have been given a great location to visit, but the name of the place has been scrambled!
-                  To decode the your next destination, With your trusty decoder, find out where you are heading next!
+                <h6>The name of your next destination has been scrambled!
+                  To decode the your next destination, use your trusty decoder 
+                  provided below to find out where you are heading next!
                 </h6>
             <div class="row"></div>
               <h4>Secret Message:</h4>
@@ -204,10 +198,10 @@
             </div>
         
     <!-- Leader Board Code -->
-    <div class="containerScoreBoard">
+    <div id="containerScoreBoard">
     <h1 style="text-align: center">Scores</h1>
     <br>
-    <table class="striped">
+    <table>
         <thead>
             <tr>
                 <th>Name</th>
@@ -218,6 +212,8 @@
         </tbody>
     </table>
     </div>
+
+</div>
     <!-- Timer Code -->
 
     <!-- Link to jQuery -->

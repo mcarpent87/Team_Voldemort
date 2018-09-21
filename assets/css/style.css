@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Cedarville+Cursive|Handlee|Merienda+One|Patrick+Hand|Walter+Turncoat');
+
 /* Google Maps Styling */
 .testDiv {
   height: 50%;
@@ -85,14 +87,56 @@ select {
 
 /* decoder puzzle styles */
 
-p{
+.decodeAlphabet {
   display:inline-block;
   letter-spacing: 25px; 
   font-weight: bold; 
   font-size: 24px; 
   border: solid 1px black;
+  border-right: solid 1px black; 
   padding: 0px 10px 0px 10px; 
  }
 
  /* end decoder puzzles styles */
+
+ /* timer styles */
+
+ #count {
+   position: absolute;
+   right: 0;
+   top: 0;
+   font-size: 30px;
+   margin-right: 25px;
+ }
+
+ #game-container {
+   margin-top: 100px;
+ }
+
+ .containerFrontPage {
+   background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 700px;
+   
+ }
+
+ .containerFrontPage h1 {
+  padding-top: 50px;
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 100px;
+ }
+
+ .containerFrontPage p {
+  padding: 0px 100px 0px 100px;
+ }
+
+ .usernameImput {
+   margin: auto;
+   width: 50%;
+ }
+
+ .showScoreboard {
+   display: show;
+ }
 

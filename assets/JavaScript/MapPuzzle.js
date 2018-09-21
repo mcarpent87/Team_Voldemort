@@ -194,7 +194,7 @@ $("#mapAnswerSubmit").on("click", function() {
     $("#hideMapRiddle").hide();
     $(".testDiv").hide();
     $("#riddleText").hide();
-    $("#count").hide();
+    // $("#count").hide();
     $("#currency-puzzle-container").show();
   } else {
     alert("Try Again");
