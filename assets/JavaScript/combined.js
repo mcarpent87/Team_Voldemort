@@ -223,9 +223,7 @@ $( document ).ready(function() {
 
     // restart game when play again button is clicked.
     $("#play_again").on("click", function() {
-        $("#containerScoreBoard").hide();
-        $(".containerFrontPage").show();
-        $("#first_name2").val("");
+        location.reload()
     })
 
 });
