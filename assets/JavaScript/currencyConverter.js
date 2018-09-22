@@ -16,10 +16,10 @@ var puzzleImage = {
             img: "./assets/images/cups.png",
             answer: 100
         }, {
-            img: "./assets/images/flowers.jpg",
+            img: "./assets/images/flowers.png",
             answer: 81
         }, {
-            img: "./assets/images/fruit.jpg",
+            img: "./assets/images/fruit.png",
             answer: 12
         }, {
             img: "./assets/images/horses.png",
@@ -122,9 +122,10 @@ $("#converted-math-puzzle-guess").on("click", function(){
         $("#number-input").val("")
         $("#converted-number-input").val("")
         $("#currency-converted-container").empty()
+        $('#modal1').modal();
     }
 
-    //show modal
+    // show modal
     // $('.modal').modal();
       
 })

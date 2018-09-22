@@ -197,7 +197,7 @@ $("#mapAnswerSubmit").on("click", function() {
     // $("#count").hide();
     $("#currency-puzzle-container").show();
   } else {
-    alert("Try Again");
     $("#mapAnswerInput").val("");
+    // $('#modal1').modal();
   }
 });

@@ -71,11 +71,8 @@ select {
 
 /*End Google Maps Styling*/
 
-.noPadding {
-  padding: 0px;
-}
-
 /* currency puzzle styles */
+
 .currency-puzzle-image {
   width: 700px;
   height: auto;
@@ -87,7 +84,7 @@ select {
 
 /* decoder puzzle styles */
 
-.decodeAlphabet {
+#decode-puzzle-container h6 {
   display:inline-block;
   letter-spacing: 25px; 
   font-weight: bold; 
@@ -106,19 +103,27 @@ select {
    right: 0;
    top: 0;
    font-size: 30px;
-   margin-right: 25px;
+   margin-right: 50px;
  }
 
+ /* #count p {
+  font-family: 'Cedarville Cursive', cursive;
+ } */
+
+ /* end timer styles */
+
+ /* body styles */
+
  #game-container {
-   margin-top: 100px;
+   margin-top: 75px;
  }
 
  .containerFrontPage {
-   background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg");
+   background-image: url("../images/map_background.svg");
    background-repeat: no-repeat;
    background-size: cover;
    height: 700px;
-   
+   position: relative;
  }
 
  .containerFrontPage h1 {
@@ -127,7 +132,7 @@ select {
   font-size: 100px;
  }
 
- .containerFrontPage p {
+ .containerFrontPage h6 {
   padding: 0px 100px 0px 100px;
  }
 
@@ -136,7 +141,41 @@ select {
    width: 50%;
  }
 
+ #view_scoreboard {
+   position: absolute;
+   right: 15px;
+   bottom: 20px;
+ }
+
+/* end body styles */
+
+/* scoreboard styles */
+
+.containerScoreBoard h1 {
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 100px;
+}
+
+#scoreboard-table {
+  padding: 100px;
+  margin: auto;
+}
+
+/* end scoreboard styles */
+
+/* random styles */
+
  .showScoreboard {
    display: show;
  }
+
+ .noPadding {
+  padding: 0px;
+}
+
+h3 {
+  font-family: 'Cedarville Cursive', cursive;
+}
+
+
 
