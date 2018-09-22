@@ -104,28 +104,14 @@ $("#converted-math-puzzle-guess").on("click", function(){
     console.log(answer)
     console.log(convertedGuess)
 
-    //setting modal values back to default
-    $("#currency-modal-wrong").show()
-    $("#currency-modal-try-again").show()
-    $("#currency-modal-correct").show()
-    $("#currency-modal-next").show()
-
-    //logic to determine which version of the modal to show
+    //logic to move to next page if correct or reset input fields if wrong
     if (convertedGuess === answer) {
-        $("#currency-modal-wrong").hide()
-        $("#currency-modal-try-again").hide()
         $("#currency-puzzle-container").hide()
         $("#decode-puzzle-container").show()
     } else {
-        $("#currency-modal-correct").hide()
-        $("#currency-modal-next").hide()
         $("#number-input").val("")
         $("#converted-number-input").val("")
         $("#currency-converted-container").empty()
-        $('#modal1').modal();
-    }
-
-    // show modal
-    // $('.modal').modal();
-      
+        // $('.modal').modal();
+    }      
 })

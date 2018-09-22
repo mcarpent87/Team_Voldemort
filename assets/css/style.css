@@ -22,6 +22,7 @@
   font-family: "Roboto", "sans-serif";
   /* line-height: 30px; */
 }
+
 select {
   padding-right: 5px;
   height: 25px;
@@ -49,15 +50,18 @@ select {
 #right-panel i {
   font-size: 12px;
 }
+
 #right-panel {
   height: 20rem;
   float: right;
   width: 390px;
   overflow: auto;
 }
+
 #map {
   margin-right: 400px;
 }
+
 @media print {
   #map {
     height: 500px;
@@ -81,10 +85,9 @@ select {
 
 /* end currency puzzle styles */
 
-
 /* decoder puzzle styles */
 
-#decode-puzzle-container h6 {
+.scrambled-letters h6 {
   display:inline-block;
   letter-spacing: 25px; 
   font-weight: bold; 
@@ -106,13 +109,30 @@ select {
    margin-right: 50px;
  }
 
- /* #count p {
-  font-family: 'Cedarville Cursive', cursive;
- } */
-
  /* end timer styles */
 
- /* body styles */
+ /* scoreboard styles */
+
+#containerScoreBoard h1 {
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 100px;
+  text-align: center;
+}
+
+#scoreboard-table {
+  padding: 100px;
+  margin: auto;
+}
+
+#play_again {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+/* end scoreboard styles */
+
+ /* general body styles */
 
  #game-container {
    margin-top: 75px;
@@ -147,35 +167,24 @@ select {
    bottom: 20px;
  }
 
+ h3 {
+  font-family: 'Cedarville Cursive', cursive;
+}
+
+.showScoreboard {
+  display: show;
+}
+
+.noPadding {
+ padding: 0px;
+}
+
 /* end body styles */
 
-/* scoreboard styles */
 
-.containerScoreBoard h1 {
-  font-family: 'Cedarville Cursive', cursive;
-  font-size: 100px;
-}
 
-#scoreboard-table {
-  padding: 100px;
-  margin: auto;
-}
 
-/* end scoreboard styles */
 
-/* random styles */
-
- .showScoreboard {
-   display: show;
- }
-
- .noPadding {
-  padding: 0px;
-}
-
-h3 {
-  font-family: 'Cedarville Cursive', cursive;
-}
 
 
 
