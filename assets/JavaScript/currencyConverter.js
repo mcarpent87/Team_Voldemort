@@ -17,13 +17,13 @@ var puzzleImage = {
             answer: 100
         }, {
             img: "./assets/images/flowers.png",
-            answer: 81
+            answer: 101
         }, {
             img: "./assets/images/fruit.png",
             answer: 12
         }, {
             img: "./assets/images/horses.png",
-            answer: 42
+            answer: 21
         }
     ]
 }
