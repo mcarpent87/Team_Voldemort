@@ -3,7 +3,7 @@
 //going to need the rest of pages hiding when first page loads, then when user clicks start, front 3rd and 4th pages hide and 2nd page shows
 
 $(document).ready(function() {
-  $(".containerScoreBoard").hide();
+  $("#containerScoreBoard").hide();
   $("#decode-puzzle-container").hide();
   $("#hideMapRiddle").hide();
   $("#currency-puzzle-container").hide();
@@ -46,6 +46,6 @@ $(document).ready(function() {
 $("#view_scoreboard").on("click", function() {
     event.preventDefault();
     $(".containerFrontPage").hide();
-    $(".containerScoreBoard").show();
+    $("#containerScoreBoard").show();
 })
 

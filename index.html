@@ -108,16 +108,6 @@
             </div>
         </div>
 
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <p id="currency-modal-wrong">Nope! Try again.</p>
-            </div>
-            <div class="modal-footer">
-                <a id="currency-modal-try-again" href="#!" class="modal-close waves-effect waves-green btn-flat">Try again</a>
-            </div>
-        </div>
-
         <!-- Currency Converter Code -->
         <div id="currency-puzzle-container">
 
@@ -173,62 +163,35 @@
                 </div>
             </div>
         </div>
-            
-
-                
         
-
-
         <!-- Decode Puzzle Code -->
-        <!-- <div id="decode-puzzle-container">
+        <div id="decode-puzzle-container">
             <div class="col s12">             
                 <div class="row">
-                   
-                    <h6>The name of your next destination has been scrambled!
-                        To decode the your next destination, use your trusty decoder 
-                        provided below to find out where you are heading next!
+                    <h6>Getting lost is half the fun! Use the cypher below to decode your next touristy destination.
+                        <!-- The name of your next destination has been scrambled!
+                      To decode the your next destination, use your trusty decoder 
+                      provided below to find out where you are heading next! -->
                     </h6>
+                </div>
 
-                    <div class="row"></div>
+                <div class="row scrambled-letters">
+                    <div class="scrambled_word" id="word"></div>
 
-                    <h4>Secret Message:</h4>
-                        <div class="inner"></div>
-                    <h4>Decipher Message Here:</h4>
-                        <div class="outer"></div>
-                    <h5>Answer:</h5>       
+                    <h4 class= "decode_answer">Answer:</h4>     
                         <input id="answer" type="text" class="validate">
-                    
                         <label for="answer"></label>
-                        
+
                     <a class="waves-effect waves-light btn-small"id="check">Check Answer</a>
                 </div>
             </div>
-        </div> -->
-        
-        <div id="decode-puzzle-container">
-                <div class="col s12">             
-                <div class="row">
-                  <!-- <h1>Decoder Puzzle</h1>
-                    <h2>Instructions</h2> -->
-                    <h6>The name of your next destination has been scrambled!
-                      To decode the your next destination, use your trusty decoder 
-                      provided below to find out where you are heading next!
-                    </h6>
-                <div class="row"></div>
-                <div class="scrambled_word" id="word"></div>
-                  <h4 class= "decode_answer">Answer:</h4>       
-                <input id="answer" type="text" class="validate">
-                  <label for="answer"></label>
-                <a class="waves-effect waves-light btn-small"id="check">Check Answer</a>
-                <a class="waves-effect waves-light btn-small"id="done">DONE</a>
-                </div>
-                </div>
-                </div>
-            </div>
+        </div>
 
         <!-- Leader Board Code -->
-        <div class="containerScoreBoard">
-            <h1 style="text-align: center">Scores</h1>
+        <div id="containerScoreBoard">
+            <button id="play_again" class="btn waves-light" type="submit" name="action">Play Again</button>
+
+            <h1>Scores</h1>
 
             <br>
 
@@ -245,8 +208,17 @@
             </table>
         </div>
 
-    <!-- closing of game div -->
-    </div>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <p id="time-up-modal">Time's up!</p>
+            </div>
+            <div class="modal-footer">
+                <a id="time-up-try-again" href="#!" class="modal-close waves-effect waves-green btn-flat">Try again</a>
+            </div>
+        </div>
+
+    </div> <!-- closing of game div -->
 
  
     <!-- Link to jQuery -->
@@ -255,15 +227,16 @@
     <!-- link to Materialize JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
        
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN-Maosba3R24Xqxv3aT-ZHcZ16dbzbdA&callback=initMap">
-    </script>
-    <script src="./assets/JavaScript/MapPuzzle.js"></script>
+    <!-- link to google maps api -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN-Maosba3R24Xqxv3aT-ZHcZ16dbzbdA&callback=initMap"></script>
+
     <!--Links to external javascript files-->
+    <script src="./assets/JavaScript/MapPuzzle.js"></script>
     <script src="./assets/JavaScript/currencyConverter.js"></script>
     <!-- <script src="./assets/JavaScript/decodePuzzle.js"></script> -->
     <!-- <script src="./assets/JavaScript/leaderBoard.js"></script> -->
     <!-- <script src="./assets/JavaScript/WelcomePage.js"></script> -->
-    <script src="./assets/JavaScript/test.js"></script>
+    <script src="./assets/JavaScript/combined.js"></script>
 
 </body>
 
